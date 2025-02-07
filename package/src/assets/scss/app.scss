@@ -32,6 +32,15 @@ html {
     background: $white;
 }
 
+.custom-link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.custom-link:hover {
+    color: #cccccc;
+}
+
 a:hover,
 a:focus {
     text-decoration: none;
@@ -511,6 +520,10 @@ html body {
         border-top: 1px solid $border;
     }
 
+    .b-t-2 {
+        border-top: 1px solid #000;
+    }
+
     .b-all {
         border: 1px solid $border !important;
     }
@@ -731,6 +744,10 @@ html body {
 
     .bg-white {
         background-color: $white;
+    }
+
+    .bg-black {
+        background-color: #000;
     }
 }
 
@@ -1686,10 +1703,6 @@ a.btn-outline-success {
 /*-------------------*/
 .card-columns {
     column-gap: 30px;
-
-    .card {
-        margin-bottom: 30px;
-    }
 }
 
 .invisible {
@@ -1716,17 +1729,23 @@ a.btn-outline-success {
     .hidden-sm-down {
         display: none !important;
     }
+    .mobile-mb-5 {
+        margin-bottom: 5px !important;
+    }
 }
 
 @media (min-width: 768px) {
-    .hidden-md-up {
-        display: none !important;
+    .mobile-mb-5 {
+        margin-bottom: 5px;
     }
 }
 
 @media (max-width: 991px) {
     .hidden-md-down {
         display: none !important;
+    }
+    .mobile-mb-5 {
+        margin-bottom: 5px !important;
     }
 }
 

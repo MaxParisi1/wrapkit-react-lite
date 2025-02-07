@@ -10,7 +10,6 @@ import Footer from "../../components/footer/footer.jsx";
 import HeaderComponent from "./sections/headercomponent.jsx";
 import BannerComponent from "./sections/bannercomponent.jsx";
 import FormBannerComponent from "./sections/formbannercomponent.jsx";
-import FeatureComponent from "./sections/featurecomponent.jsx";
 import PortfolioComponent from "./sections/portfoliocomponent.jsx";
 import PricingComponent from "./sections/pricingcomponent.jsx";
 import TeamComponent from "./sections/teamcomponent.jsx";
@@ -30,7 +29,6 @@ const CustomComponents = () => {
                     <HeaderComponent />
                     <BannerComponent />
                     <FormBannerComponent />
-                    <FeatureComponent />
                     <PortfolioComponent />
                     <PricingComponent />
                     <TeamComponent />

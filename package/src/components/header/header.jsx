@@ -1,48 +1,47 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
-import { Container, NavbarBrand, Navbar, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
-
-import logo from '../../assets/images/logos/white-text.png';
+import { Row, Col, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Container, NavbarBrand, Navbar, Nav, NavItem, NavLink, NavbarToggler, Collapse } from 'reactstrap';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
 
-    /*--------------------------------------------------------------------------------*/
-    /*To open NAVBAR in MOBILE VIEW                                                   */
-    /*--------------------------------------------------------------------------------*/
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="topbar" id="top">
-            <div className="header6">
-                <Container className="po-relative">
-                    <Navbar className="navbar-expand-lg h6-nav-bar">
-                        <NavbarBrand href="/"><img src={logo} alt="wrapkit" /></NavbarBrand>
-                        <NavbarToggler onClick={toggle}><span className="ti-menu"></span></NavbarToggler>
-                        <Collapse isOpen={isOpen} navbar className="hover-dropdown font-14 justify-content-end" id="h6-info">
-                            <Nav navbar className="ms-auto">
-                                <NavItem>
-                                    <Link className="nav-link" to={"/"}>
-                                        Components
-                                    </Link>
-                                </NavItem>
-                                <NavItem>
-                                    <Link className="nav-link" to={"/custom-components"}>
-                                        Custom-Components
-                                    </Link>
-                                </NavItem>
+            <div className="header1 po-relative navbar-custom">
+                <Container>
+                    <Navbar className="navbar-expand-lg h2-nav">
+                        <NavbarBrand href="/" className='text-white'>Estudio Parisi Abogados</NavbarBrand>
+                        <NavbarToggler onClick={toggle}><span className="ti-menu text-white"></span></NavbarToggler>
+                        <Collapse isOpen={isOpen} navbar id="header1">
+                            <Nav navbar className="ms-auto mt-2 mt-lg-0">
+                                <NavItem className="active"><NavLink href="#">Inicio</NavLink></NavItem>
+                                <UncontrolledDropdown nav inNavbar>
+                                    <DropdownToggle nav>
+                                        Profesionales <i className="fa fa-angle-down m-l-5"></i>
+                                    </DropdownToggle>
+                                    <DropdownMenu dark className="b-none animated fadeInUp">
+                                        <DropdownItem onClick={() => scrollToSection('socio-fundador')}>Socio Fundador</DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown>
+                                <NavItem><NavLink href="#" onClick={() => scrollToSection('areas-de-practica')}>Areas de Práctica</NavLink></NavItem>
+                                <NavItem><NavLink href="#" onClick={() => scrollToSection('especializacion')}>Especialización</NavLink></NavItem>
+                                <NavItem><a className="btn btn-outline-info" href="#">Contacto</a></NavItem>
                             </Nav>
-                            <div className="act-buttons">
-                                <Link to="/#coming" className="btn btn-success-gradiant font-14">Upgrade To Pro</Link>
-                            </div>
                         </Collapse>
                     </Navbar>
                 </Container>
             </div>
         </div>
     );
-
 }
+
 export default Header;
